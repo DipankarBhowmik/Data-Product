@@ -9,24 +9,44 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Background
+## Symmary
 
 This presentation is done as part of the peer-graded assignment for the coursera developing data products class. The assignment has two parts:
 
  1. A Shiny application and deploy it on Rstudio's servers
- 2 .Rstudio Presenter to prepare a reproducible presentation
+ 2. Rstudio Presenter to prepare a reproducible presentation
 
-In this assignment, the R dataset trees is used in designing the Shiny app. This project is to study the effect of girth of the tree on the volume of timber for the black cherry trees. Slide bar is used for the user to input the girth of the tree and thus the volume of timber can be predicted through the linear regression model built.
+In this project, the R dataset trees is used in creating the Shiny app. This project is to study the effect of height of the tree on the volume of timber for the black cherry trees. Slide bar is used for the user to input the height of the tree and thus the volume of timber can be predicted over the linear regression model.
 
-## Slide with R Output
+## Instruction 
 
-```{r cars, echo = TRUE}
-summary(cars)
+The shiny application in ios can be retrieved at: https://santu-bhow.shinyapps.io/trees/
+
+The source code in github (ui.R & server.R files) can be accessed at: https://github.com/DipankarBhowmik/Data-Product
+
+Operator has to select the Height of the tree using the slide bar.
+
+ 1. Subsequently making a choice, the predicted volume of timber will be demonstrated in the plot based on the linear regression model.
+
+ 2. The predicted volume varies with the Height of the tree and the plot will be refreshed automatically each time after a new selection has been made.
+
+ 3. You can also select the colour of the regression line as red or black provided by the check box.
+
+
+## Slide with data & summary of "tree"
+
+```{r ,warning = FALSE,cache=TRUE}
+head(trees)
+#Summary
+summary(trees)
 ```
 
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
+## Slide with a plot
+```{r ,warning = FALSE,cache=TRUE}
+plot(trees$Height, trees$Volume, xlab = "Height of tree", 
+          ylab = "Volime of tree", bty = "n", pch = 16,
+        xlim = c(60, 100), ylim = c(10, 90))
+ model1 <- lm(Volume ~ Height, data = trees)
+abline(model1, col = "red", lwd = 2)
 ```
 
