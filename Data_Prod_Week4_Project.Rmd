@@ -1,0 +1,32 @@
+---
+title: "Developing Data Products Peer-graded Assignment: Shiny Application and Reproducible Pitch"
+author: "Dipankar"
+date: "18 September 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Background
+
+This presentation is done as part of the peer-graded assignment for the coursera developing data products class. The assignment has two parts:
+
+ 1. A Shiny application and deploy it on Rstudio's servers
+ 2 .Rstudio Presenter to prepare a reproducible presentation
+
+In this assignment, the R dataset trees is used in designing the Shiny app. This project is to study the effect of girth of the tree on the volume of timber for the black cherry trees. Slide bar is used for the user to input the girth of the tree and thus the volume of timber can be predicted through the linear regression model built.
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
