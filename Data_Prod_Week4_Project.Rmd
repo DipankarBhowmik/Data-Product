@@ -42,9 +42,9 @@ summary(trees)
 ```
 
 ## Slide with a plot
-```{r ,warning = FALSE,cache=TRUE}
-plot(trees$Height, trees$Volume, xlab = "Height of tree", 
-          ylab = "Volime of tree", bty = "n", pch = 16,
+```{r ,warning = FALSE,cache=TRUE,echo = TRUE }
+plot(trees$Height, trees$Volume, xlab = "Height of tree",
+     ylab = "Volime of tree", bty = "n", pch = 16,
         xlim = c(60, 100), ylim = c(10, 90))
  model1 <- lm(Volume ~ Height, data = trees)
 abline(model1, col = "red", lwd = 2)
